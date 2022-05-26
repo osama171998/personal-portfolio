@@ -7,6 +7,7 @@ export const MainContainer = styled.div`
   padding: 1rem;
   flex-grow: 1;
   background-color: ${colorShades.grey};
+  height: inherit;
   @media screen and (max-width: 900px) {
     flex-direction: column-reverse;
   }

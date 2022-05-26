@@ -4,9 +4,17 @@ import { navBarItems } from "../navitems";
 
 function DesktopNavBar() {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [bgColor, setBgColor] = useState(true);
   const handleActiveIndex = (index) => {
     setActiveIndex(index);
   };
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      setBgColor(true);
+    } else {
+      setBgColor(false);
+    }
+  });
   return (
     <Styled.NavBarContainer>
       {navBarItems.map((item) => {
@@ -16,6 +24,7 @@ function DesktopNavBar() {
             href={item.hash}
             className={activeIndex === item.id ? "active" : ""}
             onClick={() => handleActiveIndex(item.id)}
+            bgColor={bgColor}
           >
             {item.name}
           </Styled.NavBarItems>

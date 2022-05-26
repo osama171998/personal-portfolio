@@ -12,15 +12,20 @@ export const navBarItems = [
   {
     id: 3,
     name: "About",
-    hash: "#about",
+    hash: "#about-me",
   },
   {
     id: 4,
-    name: "Portfolio",
-    hash: "#portfolio",
+    name: "Projects",
+    hash: "#projects",
   },
   {
     id: 5,
+    name: "Work History",
+    hash: "#work-history",
+  },
+  {
+    id: 6,
     name: "Contact",
     hash: "#contact",
   },

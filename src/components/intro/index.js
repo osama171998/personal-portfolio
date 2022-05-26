@@ -15,10 +15,10 @@ function Intro() {
       <IntroLines>
         <PunchLine>I'm Osama Idrees</PunchLine>
         <WhoAmI>I'm Web Developer with 3+ years of experience</WhoAmI>
-        <PortfolioButton>Portfolio</PortfolioButton>
+        <PortfolioButton>Projects</PortfolioButton>
       </IntroLines>
       <ImageContainer>
-        <Image src={Mine} />
+        <Image src={Mine} data-aos="fade-in" />
       </ImageContainer>
     </MainContainer>
   );

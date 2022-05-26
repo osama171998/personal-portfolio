@@ -33,7 +33,7 @@ const services = [
 ];
 function Services() {
   return (
-    <GlobalStyles.Container id="services">
+    <GlobalStyles.Container id="services" data-aos="fade-in">
       <GlobalStyles.HeadingOne>My Services</GlobalStyles.HeadingOne>
       <Styled.ServiceContainer>
         {services.map((service) => {

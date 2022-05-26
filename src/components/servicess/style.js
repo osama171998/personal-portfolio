@@ -8,11 +8,11 @@ export const ServiceContainer = styled.div`
   width: 100%;
   column-gap: 2rem;
   row-gap: 2rem;
-  padding: 2rem 0; ;
+  padding: 2rem 0;
 `;
 
 export const ServiceCard = styled.div`
-  width: 40%;
+  width: 49%;
   height: 200px;
   display: flex;
   align-items: center;
@@ -38,4 +38,5 @@ export const ServiceIcon = styled.img``;
 
 export const ServiceName = styled.p`
   font-size: 1.5rem;
+  text-align: center;
 `;
