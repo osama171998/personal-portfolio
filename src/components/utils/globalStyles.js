@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colorShades } from "./colorShades";
 export const Container = styled.div`
+  padding: 4rem 0;
   margin: 8rem 0;
   display: flex;
   align-items: center;
