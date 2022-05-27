@@ -1,12 +1,15 @@
 import styled from "styled-components";
-
+import { colorShades } from "../../utils/colorShades";
 export const Conatiner = styled.div`
+  position: fixed;
+  top: 0;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   width: 100%;
   padding: 1rem 0;
-  position: relative;
+  z-index: 99;
+  background: ${({ bgColor }) => (bgColor ? colorShades.grey : "transparent")};
 `;
 
 export const NavBarIcon = styled.img`
@@ -30,7 +33,7 @@ export const NavItemContainer = styled.div`
   right: 0;
   background-color: white;
   height: 100%;
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -50,4 +53,7 @@ export const NavInnerContainer = styled.div`
   height: 100%;
   margin-top: 2rem;
 `;
-export const NavBarItems = styled.a``;
+export const NavBarItems = styled.a`
+  color: inherit;
+  text-decoration: inherit;
+`;

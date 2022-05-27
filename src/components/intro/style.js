@@ -64,7 +64,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 100%;
+  height: 70%;
   @media only screen and (max-width: 1100px) {
     width: 600px;
   }

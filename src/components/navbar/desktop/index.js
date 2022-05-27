@@ -4,7 +4,7 @@ import { navBarItems } from "../navitems";
 
 function DesktopNavBar() {
   const [activeIndex, setActiveIndex] = useState(1);
-  const [bgColor, setBgColor] = useState(true);
+  const [bgColor, setBgColor] = useState(false);
   const handleActiveIndex = (index) => {
     setActiveIndex(index);
   };
@@ -16,7 +16,7 @@ function DesktopNavBar() {
     }
   });
   return (
-    <Styled.NavBarContainer>
+    <Styled.NavBarContainer bgColor={bgColor}>
       {navBarItems.map((item) => {
         return (
           <Styled.NavBarItems
@@ -24,7 +24,6 @@ function DesktopNavBar() {
             href={item.hash}
             className={activeIndex === item.id ? "active" : ""}
             onClick={() => handleActiveIndex(item.id)}
-            bgColor={bgColor}
           >
             {item.name}
           </Styled.NavBarItems>

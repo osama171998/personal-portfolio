@@ -8,7 +8,7 @@ export const NavBarContainer = styled.div`
   justify-content: center;
   width: 100%;
   padding: 1.5rem 0;
-  background-color: ${({ bgColor }) => (bgColor ? "red" : "")};
+  background: ${({ bgColor }) => (bgColor ? colorShades.grey : "transparent")};
   z-index: 99;
 
   & .active {
@@ -21,5 +21,5 @@ export const NavBarItems = styled.a`
   padding: 0rem 1rem;
   cursor: pointer;
   color: inherit;
-  text-decoration: inherit; ;
+  text-decoration: inherit;
 `;

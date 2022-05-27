@@ -12,7 +12,7 @@ export const ServiceContainer = styled.div`
 `;
 
 export const ServiceCard = styled.div`
-  width: 49%;
+  width: 45%;
   height: 200px;
   display: flex;
   align-items: center;
@@ -29,6 +29,9 @@ export const ServiceCard = styled.div`
   }
   @media screen and (max-width: 900px) {
     width: 80%;
+  }
+  @media screen and (max-width: 400px) {
+    width: 90%;
   }
 `;
 

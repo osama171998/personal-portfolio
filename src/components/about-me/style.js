@@ -4,22 +4,30 @@ export const AboutMeContainer = styled.div`
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  width: 100%;
+  width: 90%;
 `;
 export const ContentContainer = styled.div`
   width: 70%;
-  height: 300px;
   line-height: 2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
+  padding: 1rem;
 `;
 export const ImageContainer = styled.div`
   width: 29%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 export const Image = styled.img`
-  width: 300px;
-  height: 300px;
-  filter: drop-shadow(5px 0px 10px rgba(0, 0, 0, 0.8));
+  max-width: 100%;
+  max-height: 100%;
+  filter: drop-shadow(5px 0px 10px rgba(0, 0, 0, 0.5));
 `;

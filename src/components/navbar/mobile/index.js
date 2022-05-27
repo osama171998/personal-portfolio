@@ -5,12 +5,19 @@ import * as Styled from "./style";
 import { navBarItems } from "../navitems";
 function MobileNavBar() {
   const [toggle, setToggle] = useState(false);
-
+  const [bgColor, setBgColor] = useState(false);
   const switchToggle = () => {
     setToggle(!toggle);
   };
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      setBgColor(true);
+    } else {
+      setBgColor(false);
+    }
+  });
   return (
-    <Styled.Conatiner>
+    <Styled.Conatiner bgColor={bgColor}>
       <Styled.NavBarIcon src={NavBar} onClick={switchToggle} />
       {toggle ? (
         <Styled.BackgroundContainer>
@@ -21,7 +28,7 @@ function MobileNavBar() {
                 return (
                   <Styled.NavBarItems
                     key={item.id}
-                    href={item.href}
+                    href={item.hash}
                     onClick={() => switchToggle()}
                   >
                     {item.name}

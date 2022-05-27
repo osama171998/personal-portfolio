@@ -14,6 +14,7 @@ import "aos/dist/aos.css";
 function App() {
   const { isMobile } = useWindowSize();
   const NavBar = isMobile ? MobileNavBar : DesktopNavBar;
+  console.log(isMobile);
   useEffect(() => {
     AOS.init({
       offset: 100,
@@ -22,7 +23,6 @@ function App() {
       delay: 100,
     });
   }, []);
-  console.log(window.scrollY);
   return (
     <div>
       <Styled.WrapContainer>

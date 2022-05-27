@@ -20,7 +20,7 @@ const useWindowSize = () => {
         setIsMobile(false);
       }
     };
-
+    getWindowSize();
     window.addEventListener("resize", getWindowSize);
     // window.addEventListener("load", getWindowSize);
     return () => {
