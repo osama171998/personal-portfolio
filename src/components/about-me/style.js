@@ -30,4 +30,8 @@ export const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
   filter: drop-shadow(5px 0px 10px rgba(0, 0, 0, 0.5));
+  @media only screen and (min-width: 800px) {
+    width: 300px;
+    height: 300px;
+  }
 `;
