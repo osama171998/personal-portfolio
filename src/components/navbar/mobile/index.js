@@ -3,6 +3,7 @@ import NavBar from "./assets/navbar.png";
 import Close from "./assets/close.png";
 import * as Styled from "./style";
 import { navBarItems } from "../navitems";
+import UpwardArrow from "./assets/upward-arrow.png";
 function MobileNavBar() {
   const [toggle, setToggle] = useState(false);
   const [bgColor, setBgColor] = useState(false);
@@ -38,6 +39,11 @@ function MobileNavBar() {
             </Styled.NavInnerContainer>
           </Styled.NavItemContainer>
         </Styled.BackgroundContainer>
+      ) : null}
+      {bgColor && !toggle ? (
+        <Styled.ScrollTopContainer onClick={() => window.scrollTo(0, 0)}>
+          <Styled.UpwardArrowImage src={UpwardArrow} alt="Up" />
+        </Styled.ScrollTopContainer>
       ) : null}
     </Styled.Conatiner>
   );

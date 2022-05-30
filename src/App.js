@@ -6,6 +6,7 @@ import {
   Services,
   AboutMe,
   WorkHistory,
+  Footer,
 } from "./components";
 import * as Styled from "./app.styles";
 import useWindowSize from "./hooks/useWindowSize";
@@ -14,7 +15,6 @@ import "aos/dist/aos.css";
 function App() {
   const { isMobile } = useWindowSize();
   const NavBar = isMobile ? MobileNavBar : DesktopNavBar;
-  console.log(isMobile);
   useEffect(() => {
     AOS.init({
       offset: 100,
@@ -32,6 +32,7 @@ function App() {
       <Services />
       <AboutMe />
       <WorkHistory />
+      <Footer />
     </div>
   );
 }

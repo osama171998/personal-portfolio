@@ -25,7 +25,6 @@ export const ServiceCard = styled.div`
   &:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.6s ease-in-out;
-    /* border-color: ${colorShades.green}; */
   }
   @media screen and (max-width: 900px) {
     width: 80%;
