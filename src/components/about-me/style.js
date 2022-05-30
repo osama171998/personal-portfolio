@@ -18,7 +18,7 @@ export const ContentContainer = styled.div`
   padding: 1rem;
 `;
 export const ImageContainer = styled.div`
-  width: 29%;
+  width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
