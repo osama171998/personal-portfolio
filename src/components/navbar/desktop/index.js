@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import * as Styled from "./style";
 import { navBarItems } from "../navitems";
 import UpwardArrow from "./assets/upward-arrow.png";
+import { StateContext } from "../../../context/index";
+import Sun from "./assets/sun.png";
+import Moon from "./assets/moon.png";
+import { colorShades } from "../../utils/colorShades";
 function DesktopNavBar() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [bgColor, setBgColor] = useState(false);
@@ -15,11 +19,28 @@ function DesktopNavBar() {
       setBgColor(false);
     }
   });
+  const { state, setState } = React.useContext(StateContext);
+
+  const toggleMode = () => {
+    setState({
+      ...state,
+      darkMode: !state.darkMode,
+    });
+    let parentNode = document.getElementById("root");
+    if (!state.darkMode) {
+      parentNode.style.background = colorShades.black;
+      parentNode.style.color = colorShades.grey;
+    } else {
+      parentNode.style.background = colorShades.grey;
+      parentNode.style.color = colorShades.black;
+    }
+  };
   return (
-    <Styled.NavBarContainer bgColor={bgColor}>
+    <Styled.NavBarContainer bgColor={bgColor} darkMode={state.darkMode}>
       {navBarItems.map((item) => {
         return (
           <Styled.NavBarItems
+            darkMode={state.darkMode}
             key={item.id}
             href={item.hash}
             className={activeIndex === item.id ? "active" : ""}
@@ -29,6 +50,13 @@ function DesktopNavBar() {
           </Styled.NavBarItems>
         );
       })}
+      {
+        <Styled.DarkModeIcons
+          src={state.darkMode ? Moon : Sun}
+          alt="DarkMode"
+          onClick={toggleMode}
+        />
+      }
       {bgColor ? (
         <Styled.ScrollTopContainer onClick={() => window.scrollTo(0, 0)}>
           <Styled.UpwardArrowImage src={UpwardArrow} alt="Up" />

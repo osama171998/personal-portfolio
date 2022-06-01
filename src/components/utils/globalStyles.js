@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colorShades } from "./colorShades";
+
 export const Container = styled.div`
   padding: 4rem 0;
   margin: 8rem 0;
@@ -18,7 +19,8 @@ export const Container = styled.div`
 
 export const HeadingOne = styled.h1`
   border-bottom: 2px solid ${colorShades.green};
-  margin: 2rem 0; ;
+  margin: 2rem 0;
+  color: inherit;
 `;
 export const Content = styled.p`
   user-select: none;

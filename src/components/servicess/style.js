@@ -18,7 +18,6 @@ export const ServiceCard = styled.div`
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  background-color: ${colorShades.grey};
   border: 1px solid ${colorShades.green};
   border-radius: 12px;
   cursor: pointer;

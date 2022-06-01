@@ -94,4 +94,6 @@ export const Info = styled.div`
 export const Heading = styled.h4`
   min-width: 170px;
 `;
-export const Content = styled.p``;
+export const Content = styled.p`
+  color: black;
+`;

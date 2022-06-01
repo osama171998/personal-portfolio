@@ -4,12 +4,14 @@ export const Conatiner = styled.div`
   position: fixed;
   top: 0;
   display: flex;
-  align-items: flex-end;
-  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  /* flex-direction: column; */
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 1rem;
   z-index: 99;
-  background: ${({ bgColor }) => (bgColor ? colorShades.grey : "transparent")};
+  background: ${({ bgColor, darkMode }) =>
+    darkMode ? colorShades.black : bgColor ? colorShades.grey : "transparent"};
 `;
 
 export const NavBarIcon = styled.img`
@@ -23,7 +25,8 @@ export const BackgroundContainer = styled.div`
   top: 0;
   right: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* background-color: red; */
   height: 100%;
 `;
 
@@ -31,13 +34,15 @@ export const NavItemContainer = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  background-color: white;
+  background-color: black;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   padding: 1rem;
+  background: ${({ darkMode }) =>
+    darkMode ? colorShades.black : colorShades.grey};
 `;
 
 export const CloseIcon = styled.img`
@@ -74,4 +79,8 @@ export const ScrollTopContainer = styled.div`
 export const UpwardArrowImage = styled.img`
   width: 15px;
   height: 15px;
+`;
+export const DarkModeIcons = styled.img`
+  width: 25px;
+  height: 25px;
 `;

@@ -4,6 +4,11 @@ import Close from "./assets/close.png";
 import * as Styled from "./style";
 import { navBarItems } from "../navitems";
 import UpwardArrow from "./assets/upward-arrow.png";
+import Sun from "./assets/sun.png";
+import Moon from "./assets/moon.png";
+import { StateContext } from "../../../context/index";
+import { colorShades } from "../../utils/colorShades";
+
 function MobileNavBar() {
   const [toggle, setToggle] = useState(false);
   const [bgColor, setBgColor] = useState(false);
@@ -17,12 +22,27 @@ function MobileNavBar() {
       setBgColor(false);
     }
   });
+  const { state, setState } = React.useContext(StateContext);
+  const toggleMode = () => {
+    setState({
+      ...state,
+      darkMode: !state.darkMode,
+    });
+    let parentNode = document.getElementById("root");
+    if (!state.darkMode) {
+      parentNode.style.background = colorShades.black;
+      parentNode.style.color = colorShades.grey;
+    } else {
+      parentNode.style.background = colorShades.grey;
+      parentNode.style.color = colorShades.black;
+    }
+  };
   return (
-    <Styled.Conatiner bgColor={bgColor}>
+    <Styled.Conatiner bgColor={bgColor} darkMode={state.darkMode}>
       <Styled.NavBarIcon src={NavBar} onClick={switchToggle} />
       {toggle ? (
         <Styled.BackgroundContainer>
-          <Styled.NavItemContainer>
+          <Styled.NavItemContainer darkMode={state.darkMode}>
             <Styled.CloseIcon src={Close} onClick={switchToggle} />
             <Styled.NavInnerContainer>
               {navBarItems.map((item) => {
@@ -40,6 +60,13 @@ function MobileNavBar() {
           </Styled.NavItemContainer>
         </Styled.BackgroundContainer>
       ) : null}
+      {
+        <Styled.DarkModeIcons
+          src={state.darkMode ? Moon : Sun}
+          alt="DarkMode"
+          onClick={toggleMode}
+        />
+      }
       {bgColor && !toggle ? (
         <Styled.ScrollTopContainer onClick={() => window.scrollTo(0, 0)}>
           <Styled.UpwardArrowImage src={UpwardArrow} alt="Up" />

@@ -6,12 +6,15 @@ import {
   Services,
   AboutMe,
   WorkHistory,
+  // ContactMe,
   Footer,
 } from "./components";
 import * as Styled from "./app.styles";
 import useWindowSize from "./hooks/useWindowSize";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "antd/dist/antd.css";
+import ContextProvider from "./context/index";
 function App() {
   const { isMobile } = useWindowSize();
   const NavBar = isMobile ? MobileNavBar : DesktopNavBar;
@@ -23,16 +26,20 @@ function App() {
       delay: 100,
     });
   }, []);
+
   return (
     <div>
-      <Styled.WrapContainer>
-        <NavBar />
-        <Intro />
-      </Styled.WrapContainer>
-      <Services />
-      <AboutMe />
-      <WorkHistory />
-      <Footer />
+      <ContextProvider>
+        <Styled.WrapContainer>
+          <NavBar />
+          <Intro />
+        </Styled.WrapContainer>
+        <Services />
+        <AboutMe />
+        <WorkHistory />
+        {/* <ContactMe /> */}
+        <Footer />
+      </ContextProvider>
     </div>
   );
 }

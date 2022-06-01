@@ -6,7 +6,6 @@ export const MainContainer = styled.div`
   justify-content: space-between;
   padding: 1rem;
   flex-grow: 1;
-  background-color: ${colorShades.grey};
   height: inherit;
   @media screen and (max-width: 900px) {
     flex-direction: column-reverse;
@@ -20,10 +19,11 @@ export const IntroLines = styled.div`
   flex-direction: column;
   row-gap: 1rem;
   text-align: center;
+  color: inherit;
 `;
 export const PunchLine = styled.h1`
   font-size: 4rem;
-
+  color: inherit;
   @media only screen and (max-width: 1400px) {
     font-size: 3rem;
   }
