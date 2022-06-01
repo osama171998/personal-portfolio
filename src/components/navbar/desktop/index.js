@@ -9,6 +9,7 @@ import { colorShades } from "../../utils/colorShades";
 function DesktopNavBar() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [bgColor, setBgColor] = useState(false);
+
   const handleActiveIndex = (index) => {
     setActiveIndex(index);
   };
@@ -19,22 +20,21 @@ function DesktopNavBar() {
       setBgColor(false);
     }
   });
-  const { state, setState } = React.useContext(StateContext);
+  const { state, dispatch } = React.useContext(StateContext);
 
   const toggleMode = () => {
-    setState({
-      ...state,
-      darkMode: !state.darkMode,
-    });
     let parentNode = document.getElementById("root");
-    if (!state.darkMode) {
-      parentNode.style.background = colorShades.black;
-      parentNode.style.color = colorShades.grey;
-    } else {
+    if (state.darkMode) {
+      dispatch({ type: "DISABLE" });
       parentNode.style.background = colorShades.grey;
       parentNode.style.color = colorShades.black;
+    } else {
+      dispatch({ type: "ENABLE" });
+      parentNode.style.background = colorShades.black;
+      parentNode.style.color = colorShades.grey;
     }
   };
+
   return (
     <Styled.NavBarContainer bgColor={bgColor} darkMode={state.darkMode}>
       {navBarItems.map((item) => {
