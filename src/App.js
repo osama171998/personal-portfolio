@@ -6,7 +6,7 @@ import {
   Services,
   AboutMe,
   WorkHistory,
-  // ContactMe,
+  ContactMe,
   Footer,
 } from "./components";
 import * as Styled from "./app.styles";
@@ -37,7 +37,7 @@ function App() {
         <Services />
         <AboutMe />
         <WorkHistory />
-        {/* <ContactMe /> */}
+        <ContactMe />
         <Footer />
       </ContextProvider>
     </div>

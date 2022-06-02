@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import NavBar from "./assets/navbar.png";
-import Close from "./assets/close.png";
+import NavBar from "../../../assets/svgs/menu.svg";
+import Close from "../../../assets/pngs/close.png";
 import * as Styled from "./style";
 import { navBarItems } from "../navitems";
-import UpwardArrow from "./assets/upward-arrow.png";
-import Sun from "./assets/sun.png";
-import Moon from "./assets/moon.png";
+import UpwardArrow from "../../../assets/pngs/upward-arrow.png";
+import Sun from "../../../assets/svgs/sun.svg";
+import Moon from "../../../assets/svgs/moon.svg";
 import { StateContext } from "../../../context/index";
 import { colorShades } from "../../utils/colorShades";
 
@@ -22,19 +22,17 @@ function MobileNavBar() {
       setBgColor(false);
     }
   });
-  const { state, setState } = React.useContext(StateContext);
+  const { state, dispatch } = React.useContext(StateContext);
   const toggleMode = () => {
-    setState({
-      ...state,
-      darkMode: !state.darkMode,
-    });
     let parentNode = document.getElementById("root");
-    if (!state.darkMode) {
-      parentNode.style.background = colorShades.black;
-      parentNode.style.color = colorShades.grey;
-    } else {
+    if (state.darkMode) {
+      dispatch({ type: "DISABLE" });
       parentNode.style.background = colorShades.grey;
       parentNode.style.color = colorShades.black;
+    } else {
+      dispatch({ type: "ENABLE" });
+      parentNode.style.background = colorShades.black;
+      parentNode.style.color = colorShades.grey;
     }
   };
   return (
@@ -62,7 +60,7 @@ function MobileNavBar() {
       ) : null}
       {
         <Styled.DarkModeIcons
-          src={state.darkMode ? Moon : Sun}
+          src={state.darkMode ? Sun : Moon}
           alt="DarkMode"
           onClick={toggleMode}
         />

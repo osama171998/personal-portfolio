@@ -8,3 +8,9 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+/* Ant Design Classess overwrite */
+
+.ant-form-item-label > label {
+  min-width: 200px;
+}

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import * as Styled from "./style";
 import { navBarItems } from "../navitems";
-import UpwardArrow from "./assets/upward-arrow.png";
+import UpwardArrow from "../../../assets/pngs/upward-arrow.png";
 import { StateContext } from "../../../context/index";
-import Sun from "./assets/sun.png";
-import Moon from "./assets/moon.png";
+import Sun from "../../../assets/svgs/sun.svg";
+import Moon from "../../../assets/svgs/moon.svg";
 import { colorShades } from "../../utils/colorShades";
 function DesktopNavBar() {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -52,7 +52,7 @@ function DesktopNavBar() {
       })}
       {
         <Styled.DarkModeIcons
-          src={state.darkMode ? Moon : Sun}
+          src={state.darkMode ? Sun : Moon}
           alt="DarkMode"
           onClick={toggleMode}
         />

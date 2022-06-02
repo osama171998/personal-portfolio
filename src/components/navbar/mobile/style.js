@@ -6,7 +6,6 @@ export const Conatiner = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* flex-direction: column; */
   width: 100%;
   padding: 1rem 1rem;
   z-index: 99;
