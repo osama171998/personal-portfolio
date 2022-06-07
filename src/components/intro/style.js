@@ -61,6 +61,10 @@ export const ImageContainer = styled.div`
   @media only screen and (max-width: 900px) {
     height: 70%;
   }
+  @media only screen and (max-width: 600px) {
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 export const Image = styled.img`

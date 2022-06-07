@@ -37,11 +37,19 @@ function MobileNavBar() {
   };
   return (
     <Styled.Conatiner bgColor={bgColor} darkMode={state.darkMode}>
-      <Styled.NavBarIcon src={NavBar} onClick={switchToggle} />
+      <Styled.NavBarIcon
+        src={NavBar}
+        onClick={switchToggle}
+        darkMode={state.darkMode}
+      />
       {toggle ? (
         <Styled.BackgroundContainer>
           <Styled.NavItemContainer darkMode={state.darkMode}>
-            <Styled.CloseIcon src={Close} onClick={switchToggle} />
+            <Styled.CloseIcon
+              src={Close}
+              onClick={switchToggle}
+              darkMode={state.darkMode}
+            />
             <Styled.NavInnerContainer>
               {navBarItems.map((item) => {
                 return (

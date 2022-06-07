@@ -2,6 +2,7 @@ import React from "react";
 import * as GlobalStyles from "../utils/globalStyles";
 import * as Styles from "./style";
 import { Form, Input, Button } from "antd";
+import { StateContext } from "../../context/index";
 // import { SMTPClient } from "emailjs";
 const ContactMe = () => {
   // const client = new SMTPClient({
@@ -10,7 +11,7 @@ const ContactMe = () => {
   //   host: "smtp.rockharipur@gmail.com.com",
   //   ssl: true,
   // });
-
+  const { state } = React.useContext(StateContext);
   const [form] = Form.useForm();
 
   const submitForm = (values) => {
@@ -20,7 +21,7 @@ const ContactMe = () => {
   return (
     <GlobalStyles.Container id="contact">
       <GlobalStyles.HeadingOne>Contact Me</GlobalStyles.HeadingOne>
-      <Styles.FormContainer>
+      <Styles.FormContainer darkMode={state.darkMode}>
         <Form
           form={form}
           onFinish={submitForm}
@@ -35,6 +36,7 @@ const ContactMe = () => {
           >
             <Input />
           </Form.Item>
+
           <Form.Item
             name="email"
             label="Email: "

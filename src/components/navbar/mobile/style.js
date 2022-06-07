@@ -17,6 +17,9 @@ export const NavBarIcon = styled.img`
   margin-right: 1rem;
   width: 40px;
   height: 40px;
+  padding: 5px;
+  background-color: ${({ darkMode }) => (darkMode ? "white" : "none")};
+  border-radius: ${({ darkMode }) => (darkMode ? "25px" : "none")};
 `;
 
 export const BackgroundContainer = styled.div`
@@ -47,6 +50,9 @@ export const NavItemContainer = styled.div`
 export const CloseIcon = styled.img`
   width: 35px;
   height: 35px;
+  background-color: ${({ darkMode }) => (darkMode ? "white" : "none")};
+  border-radius: ${({ darkMode }) => (darkMode ? "25px" : "none")};
+  padding: 5px;
 `;
 export const NavInnerContainer = styled.div`
   display: flex;
