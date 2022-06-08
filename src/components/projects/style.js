@@ -6,6 +6,10 @@ export const SwiperContainer = styled.section`
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: ${colorShades.green};
+  }
 `;
 export const SlideContent = styled.div`
   display: flex;
