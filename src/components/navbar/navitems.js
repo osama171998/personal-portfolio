@@ -16,13 +16,13 @@ export const navBarItems = [
   },
   {
     id: 4,
-    name: "Work History",
-    hash: "#work-history",
+    name: "Projects",
+    hash: "#projects",
   },
   {
     id: 5,
-    name: "Projects",
-    hash: "#projects",
+    name: "Work History",
+    hash: "#work-history",
   },
 
   {

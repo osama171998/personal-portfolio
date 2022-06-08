@@ -19,7 +19,7 @@ const ContactMe = () => {
   };
 
   return (
-    <GlobalStyles.Container id="contact">
+    <GlobalStyles.Container id="contact" data-aos="fade-in">
       <GlobalStyles.HeadingOne>Contact Me</GlobalStyles.HeadingOne>
       <Styles.FormContainer darkMode={state.darkMode}>
         <Form

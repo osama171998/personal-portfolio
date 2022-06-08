@@ -37,7 +37,7 @@ export const WhoAmI = styled.p`
     font-size: 1rem;
   }
 `;
-export const PortfolioButton = styled.div`
+export const PortfolioButton = styled.a`
   border: 1px solid ${colorShades.green};
   background: ${colorShades.green};
   padding: 1rem 2rem;

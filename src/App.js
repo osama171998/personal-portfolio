@@ -6,6 +6,7 @@ import {
   Services,
   AboutMe,
   WorkHistory,
+  Projects,
   ContactMe,
   Footer,
 } from "./components";
@@ -36,6 +37,7 @@ function App() {
         </Styled.WrapContainer>
         <Services />
         <AboutMe />
+        <Projects />
         <WorkHistory />
         <ContactMe />
         <Footer />
