@@ -3,19 +3,45 @@ import * as GlobalStyles from "../utils/globalStyles";
 import * as Styles from "./style";
 import { Form, Input, Button } from "antd";
 import { StateContext } from "../../context/index";
-// import { SMTPClient } from "emailjs";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 const ContactMe = () => {
-  // const client = new SMTPClient({
-  //   user: "Osama Idrees",
-  //   password: "Osam@12345",
-  //   host: "smtp.rockharipur@gmail.com.com",
-  //   ssl: true,
-  // });
   const { state } = React.useContext(StateContext);
   const [form] = Form.useForm();
 
   const submitForm = (values) => {
-    console.log(values);
+    const { name, email, contactNo, message } = values;
+    const emailKeys = {
+      name: name,
+      email: email,
+      contactNo: contactNo,
+      message: message,
+    };
+    console.log(emailKeys);
+    emailjs
+      .send(
+        "service_er3axlg",
+        "portfolio_contact_form",
+        emailKeys,
+        "Vv-vl2PKf85e8Cwer"
+      )
+      .then(
+        (response) => {
+          if (response.status === 200) {
+            Swal.fire({
+              icon: "success",
+              text: "Thanks for contacting me. I will get back to you soon.",
+            });
+          }
+        },
+        (err) => {
+          Swal.fire({
+            icon: "error",
+            text: "Sorry! Something went wrong.",
+          });
+          console.log("FAILED...", err);
+        }
+      );
   };
 
   return (
