@@ -9,19 +9,19 @@ export const ProjectsHistory = [
     index: 1,
     thumbnail: mcd,
     name: "Career Advisory Bot",
-    url: "https://mycareerdreams.com/",
+    url: "https://mycareer.mycareerdreams.com/",
   },
   {
     index: 2,
     thumbnail: rb,
     name: "Recruitment Bot",
-    url: "https://mycareerdreams.com/recruitment-bot",
+    url: "https://recruit.mycareerdreams.com/",
   },
   {
     index: 3,
     thumbnail: cpb,
     name: "Career Progression Bot",
-    url: "https://mycareerdreams.com/career-progression/",
+    url: "https://progress.mycareerdreams.com/",
   },
   {
     index: 4,

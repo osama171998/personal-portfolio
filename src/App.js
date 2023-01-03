@@ -14,7 +14,7 @@ import * as Styled from "./app.styles";
 import useWindowSize from "./hooks/useWindowSize";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "antd/dist/antd.css";
+import 'antd/dist/antd.min.css'
 import ContextProvider from "./context/index";
 function App() {
   const { isMobile } = useWindowSize();
