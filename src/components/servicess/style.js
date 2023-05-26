@@ -12,23 +12,24 @@ export const ServiceContainer = styled.div`
 `;
 
 export const ServiceCard = styled.div`
-  width: 49%;
+  width: 45%;
   height: 200px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  background-color: ${colorShades.grey};
   border: 1px solid ${colorShades.green};
   border-radius: 12px;
   cursor: pointer;
   &:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.6s ease-in-out;
-    /* border-color: ${colorShades.green}; */
   }
   @media screen and (max-width: 900px) {
     width: 80%;
+  }
+  @media screen and (max-width: 400px) {
+    width: 90%;
   }
 `;
 

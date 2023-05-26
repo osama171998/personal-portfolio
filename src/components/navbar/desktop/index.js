@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import * as Styled from "./style";
 import { navBarItems } from "../navitems";
-
+import UpwardArrow from "../../../assets/pngs/upward-arrow.png";
+import { StateContext } from "../../../context/index";
+import Sun from "../../../assets/svgs/sun.svg";
+import Moon from "../../../assets/svgs/moon.svg";
+import { colorShades } from "../../utils/colorShades";
 function DesktopNavBar() {
   const [activeIndex, setActiveIndex] = useState(1);
-  const [bgColor, setBgColor] = useState(true);
+  const [bgColor, setBgColor] = useState(false);
+
   const handleActiveIndex = (index) => {
     setActiveIndex(index);
   };
@@ -15,21 +20,48 @@ function DesktopNavBar() {
       setBgColor(false);
     }
   });
+  const { state, dispatch } = React.useContext(StateContext);
+
+  const toggleMode = () => {
+    let parentNode = document.getElementById("root");
+    if (state.darkMode) {
+      dispatch({ type: "DISABLE" });
+      parentNode.style.background = colorShades.grey;
+      parentNode.style.color = colorShades.black;
+    } else {
+      dispatch({ type: "ENABLE" });
+      parentNode.style.background = colorShades.black;
+      parentNode.style.color = colorShades.grey;
+    }
+  };
+
   return (
-    <Styled.NavBarContainer>
+    <Styled.NavBarContainer bgColor={bgColor} darkMode={state.darkMode}>
       {navBarItems.map((item) => {
         return (
           <Styled.NavBarItems
+            darkMode={state.darkMode}
             key={item.id}
             href={item.hash}
             className={activeIndex === item.id ? "active" : ""}
             onClick={() => handleActiveIndex(item.id)}
-            bgColor={bgColor}
           >
             {item.name}
           </Styled.NavBarItems>
         );
       })}
+      {
+        <Styled.DarkModeIcons
+          src={state.darkMode ? Sun : Moon}
+          alt="DarkMode"
+          onClick={toggleMode}
+        />
+      }
+      {bgColor ? (
+        <Styled.ScrollTopContainer onClick={() => window.scrollTo(0, 0)}>
+          <Styled.UpwardArrowImage src={UpwardArrow} alt="Up" />
+        </Styled.ScrollTopContainer>
+      ) : null}
     </Styled.NavBarContainer>
   );
 }

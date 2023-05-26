@@ -24,6 +24,7 @@ export const navBarItems = [
     name: "Work History",
     hash: "#work-history",
   },
+
   {
     id: 6,
     name: "Contact",

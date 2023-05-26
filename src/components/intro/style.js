@@ -6,7 +6,6 @@ export const MainContainer = styled.div`
   justify-content: space-between;
   padding: 1rem;
   flex-grow: 1;
-  background-color: ${colorShades.grey};
   height: inherit;
   @media screen and (max-width: 900px) {
     flex-direction: column-reverse;
@@ -20,10 +19,11 @@ export const IntroLines = styled.div`
   flex-direction: column;
   row-gap: 1rem;
   text-align: center;
+  color: inherit;
 `;
 export const PunchLine = styled.h1`
   font-size: 4rem;
-
+  color: inherit;
   @media only screen and (max-width: 1400px) {
     font-size: 3rem;
   }
@@ -37,7 +37,7 @@ export const WhoAmI = styled.p`
     font-size: 1rem;
   }
 `;
-export const PortfolioButton = styled.div`
+export const PortfolioButton = styled.a`
   border: 1px solid ${colorShades.green};
   background: ${colorShades.green};
   padding: 1rem 2rem;
@@ -61,10 +61,14 @@ export const ImageContainer = styled.div`
   @media only screen and (max-width: 900px) {
     height: 70%;
   }
+  @media only screen and (max-width: 600px) {
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 export const Image = styled.img`
-  height: 100%;
+  height: 70%;
   @media only screen and (max-width: 1100px) {
     width: 600px;
   }

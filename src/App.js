@@ -6,11 +6,16 @@ import {
   Services,
   AboutMe,
   WorkHistory,
+  Projects,
+  ContactMe,
+  Footer,
 } from "./components";
 import * as Styled from "./app.styles";
 import useWindowSize from "./hooks/useWindowSize";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import 'antd/dist/antd.min.css'
+import ContextProvider from "./context/index";
 function App() {
   const { isMobile } = useWindowSize();
   const NavBar = isMobile ? MobileNavBar : DesktopNavBar;
@@ -22,16 +27,21 @@ function App() {
       delay: 100,
     });
   }, []);
-  console.log(window.scrollY);
+
   return (
     <div>
-      <Styled.WrapContainer>
-        <NavBar />
-        <Intro />
-      </Styled.WrapContainer>
-      <Services />
-      <AboutMe />
-      <WorkHistory />
+      <ContextProvider>
+        <Styled.WrapContainer>
+          <NavBar />
+          <Intro />
+        </Styled.WrapContainer>
+        <Services />
+        <AboutMe />
+        <Projects />
+        <WorkHistory />
+        <ContactMe />
+        <Footer />
+      </ContextProvider>
     </div>
   );
 }
