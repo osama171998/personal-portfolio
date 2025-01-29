@@ -8,13 +8,17 @@ import {
   Image,
   PortfolioButton,
 } from "./style";
-import Mine from "./assets/sample.png";
+import Mine from "./assets/osama-idrees.png";
+
 function Intro() {
+  let currentDate = new Date;
+  let currentYear = currentDate.getFullYear()
+  const yearExperience = currentYear-2019
   return (
     <MainContainer>
       <IntroLines>
         <PunchLine>I'm Osama Idrees</PunchLine>
-        <WhoAmI>I'm Web Developer with 3+ years of experience</WhoAmI>
+        <WhoAmI>Full Stack Web Developer with {yearExperience}+ years of experience</WhoAmI>
         <PortfolioButton href={"#projects"}>Projects</PortfolioButton>
       </IntroLines>
       <ImageContainer>

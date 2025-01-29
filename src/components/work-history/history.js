@@ -1,5 +1,6 @@
 import BotnosticSolutions from "./assets/botnostic-solutions.jpeg";
 import PakistanAirForce from "./assets/pakistan-air-force.png";
+import NASTP from "./assets/nastp.png";
 export const History = [
   {
     index: 1,
@@ -12,7 +13,14 @@ export const History = [
     index: 2,
     employerName: "Pakistan Air Force",
     designation: "Tech Expert",
-    tenure: "October 2021 - Current ",
+    tenure: "October 2021 - May 2024 ",
     icon: PakistanAirForce,
   },
+  {
+    index: 3,
+    employerName: "National Aerospace Science and Technology Park (NASTP)",
+    designation: "Senior Research Officer (GIS Software Dev)",
+    tenure: "June 2024 - Current ",
+    icon: NASTP,
+  }
 ];
