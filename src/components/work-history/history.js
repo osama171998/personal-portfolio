@@ -12,7 +12,7 @@ export const History = [
   {
     index: 2,
     employerName: "Pakistan Air Force",
-    designation: "Tech Expert",
+    designation: "Assistant Director (GIS Dev)",
     tenure: "October 2021 - May 2024 ",
     icon: PakistanAirForce,
   },
