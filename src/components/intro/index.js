@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import {
   MainContainer,
   IntroLines,
@@ -11,9 +11,16 @@ import {
 import Mine from "./assets/osama-idrees.png";
 
 function Intro() {
-  let currentDate = new Date;
-  let currentYear = currentDate.getFullYear()
-  const yearExperience = currentYear-2019
+  const [yearExperience,setYearExperience] = useState(null)
+  useEffect(()=>{
+    let currentDate = new Date;
+    let currentYear = currentDate.getFullYear()
+    const yearCalculate = currentYear-2019
+    setYearExperience(yearCalculate)
+  },[])
+  
+  
+ 
   return (
     <MainContainer>
       <IntroLines>
