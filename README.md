@@ -1,1 +1,1 @@
-Persoanl Portfolio wesbite developed using ReactJS
+You can see live @ https://osamaidrees.netlify.app/
