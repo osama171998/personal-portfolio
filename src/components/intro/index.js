@@ -13,7 +13,7 @@ import Mine from "./assets/osama-idrees.png";
 function Intro() {
   const [yearExperience,setYearExperience] = useState(null)
   useEffect(()=>{
-    let currentDate = new Date;
+    let currentDate = new Date();
     let currentYear = currentDate.getFullYear()
     const yearCalculate = currentYear-2019
     setYearExperience(yearCalculate)
